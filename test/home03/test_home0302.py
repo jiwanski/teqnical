@@ -1,4 +1,4 @@
-from classes import home0302 as home
+from classes.home03 import home0302 as home
 
 
 def test_sorted_list():

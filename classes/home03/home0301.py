@@ -22,5 +22,5 @@ print(primes_four_last)
 Używając funkcji sum() policz sumę “primes” i “primes_four”. 
 Ile razy większa jest suma “primes” od “primes_four”?
 """
-primes_ratio = sum(primes) // sum(primes_four)
+primes_ratio = sum(primes) / sum(primes_four)
 print(primes_ratio)
