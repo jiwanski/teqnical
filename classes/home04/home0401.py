@@ -57,7 +57,8 @@ for i in range(10):
     # dodaj ostateczny słownik do listy
     people.append(person)
 
-for p in people:
-    print(f"Hi! I'm {p['firstname']} {p['lastname']}. "
+for i, p in enumerate(people):
+    print(f"({i + 1}) "
+          f"Hi! I'm {p['firstname']} {p['lastname']}. "
           f"I come from {(p['country'], 'planet Earth')[p['country'] == 'Other']} "
           f"and I was born in {p['birth_year']}")
