@@ -1,3 +1,4 @@
+import math
 import random
 from datetime import datetime
 from pprint import pprint
@@ -29,20 +30,23 @@ example_dictionary = {
 
 # ROZWIĄZANIE
 
-# listy losowych wartości, aby nie wykonywać funkcji random w pętli
-sample_female = random.sample(female_fnames, k=5)  # 5 przypadkowych imion żeńskich
-sample_male = random.sample(male_fnames, k=5)  # 5 przypadkowych imion męskich
-rnd_firstnames = sample_male + sample_female  # końcowa lista 10 imion
-# pozostałe listy z 10 elementami - z powtórzeniami, ponieważ mogą mieć < 10 unikalnych wartości
-rnd_countries = random.choices(countries, k=10)
-rnd_surnames = random.choices(surnames, k=10)
-rnd_ages = random.choices(range(5, 45), k=10)
+# wielkość zbioru generowanych osób
+group = 40
+# po ile mężczyzn i kobiet - uwaga - przy grupach nieparzystych różnica NIE JEST losowa
+males = round(group / 2)
+females = group - males
+# losowe listy o wielkości wyznaczonej przez zmienna group
+rnd_firstnames = random.choices(female_fnames, k=females) + random.choices(male_fnames, k=males)
+random.shuffle(rnd_firstnames)
+rnd_countries = random.choices(countries, k=group)
+rnd_surnames = random.choices(surnames, k=group)
+rnd_ages = random.choices(range(5, 45), k=group)
 # current year
 year = datetime.now().year
 # inicjalizacja listy słowników
 people = []
 
-for i in range(10):
+for i in range(group):
     # statyczne wartości - aby uniknąć person = {} i od razu utworzyć słownik
     person = {
         'age': rnd_ages[i],
