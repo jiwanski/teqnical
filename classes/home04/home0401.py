@@ -51,7 +51,7 @@ for i in range(10):
         'lastname': rnd_surnames[i]
     }
     # dynamiczne wartości - na bazie już istniejącego słownika
-    person['adult'] = bool(person['age'] >= 18)
+    person['adult'] = person['age'] >= 18
     person['email'] = f"{person['firstname'].lower()}.{person['lastname'].lower()}@example.com"
     person['birth_year'] = year - person['age']
     # dodaj ostateczny słownik do listy
