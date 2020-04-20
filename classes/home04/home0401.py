@@ -34,7 +34,7 @@ example_dictionary = {
 group = 40
 # po ile mężczyzn i kobiet
 sexes = [round(group / 2), group - round(group / 2)]
-# przy grupach nieparzystych trzeba dodatkowo wymieszać listę
+# przy grupach nieparzystych trzeba dodatkowo potasować listę
 if group % 2 == 1:
     random.shuffle(sexes)
 # losowe listy o wielkości wyznaczonej przez zmienna group
