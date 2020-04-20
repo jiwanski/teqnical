@@ -32,11 +32,13 @@ example_dictionary = {
 
 # wielkość zbioru generowanych osób
 group = 40
-# po ile mężczyzn i kobiet - uwaga - przy grupach nieparzystych różnica NIE JEST losowa
-males = round(group / 2)
-females = group - males
+# po ile mężczyzn i kobiet
+sexes = [round(group / 2), group - round(group / 2)]
+# przy grupach nieparzystych trzeba dodatkowo wymieszać listę
+if group % 2 == 1:
+    random.shuffle(sexes)
 # losowe listy o wielkości wyznaczonej przez zmienna group
-rnd_firstnames = random.choices(female_fnames, k=females) + random.choices(male_fnames, k=males)
+rnd_firstnames = random.choices(female_fnames, k=sexes[0]) + random.choices(male_fnames, k=sexes[1])
 random.shuffle(rnd_firstnames)
 rnd_countries = random.choices(countries, k=group)
 rnd_surnames = random.choices(surnames, k=group)
