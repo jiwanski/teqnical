@@ -2,7 +2,7 @@
 heroes = [
     {
         'name': 'Hari Seldon',
-        'human': True,
+        'robot': True,
         'math': 10,
         'history': 4,
         'origin': 'Helicon'
@@ -30,7 +30,7 @@ heroes = [
     },
     {
         'name': 'Raych Seldon',
-        'human': False,
+        'robot': False,
         'math': 3,
         'history': 5,
         'origin': 'Dahl'
