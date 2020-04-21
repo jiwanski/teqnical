@@ -47,7 +47,7 @@ for hero in heroes:
         max_avg = avg
         nerd = hero['name']
 
-print(f"This nerd, {nerd}, has maximum average scores of {max_avg}")
+print(f"This nerd, {nerd}, has maximum average score of {max_avg}")
 # auto challenge
 is_nerd_robot = int([h['robot'] for h in heroes if h['name'] == nerd][0])
 print(f"But he is{[' not', ''][is_nerd_robot]} a robot!")
