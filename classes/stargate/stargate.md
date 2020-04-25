@@ -4,7 +4,7 @@ Funkcja `stargate()` ma wydrukować następujące zachowania w Stargate Command 
 
 1. komentarz Stargate Command, z reguły typu:
   
-  `[Stargate Command] miejmy nadzieję, że PRZYJACIEL pomoże nam przeciwko WROGOWI`
+  `[Stargate Command] miejmy nadzieję, że SPRZYMIERZENIEC pomoże nam przeciwko WROGOWI`
 
 2. sekwencję wykręcania adresu z kolejnymi numerami i podanym **chevronem**
   * przy 7 lub więcej chevronach, ostatni jest raportowany jako _locked_
@@ -81,7 +81,7 @@ def stargate():
     pass
 ```
 
-## dalsze przykłady:
+## dalsze przykłady
 
 ### 1
 
