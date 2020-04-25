@@ -11,7 +11,7 @@ Funkcja `stargate()` ma wydrukować następujące zachowania w Stargate Command 
   * wszystkie inne jako _encoded_:
 
 
-```python
+```haskell
 chevron 1 encoded (q)
 chevron 2 encoded (h)
 chevron 3 encoded (o)
