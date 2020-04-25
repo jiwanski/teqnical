@@ -1,22 +1,42 @@
-# stargate()
+# Stargate dial-up
 
-Funkcja stargate() ma wydrukować nastepujące zachowania w Stargate Command podczas wykręcania gwiezdnego adresu:
+Funkcja `stargate()` ma wydrukować następujące zachowania w Stargate Command podczas wykręcania gwiezdnego adresu:
 
-* komentarz Stargate Command, z reguły typu:
-  * "miejmy nadzieję, że PRZYJACIEL pomoże nam przeciwko WROGOWI"
-* sekwencję wykręcania adresu z kolejnymi numerami i podanym **chevronem**
+1. komentarz Stargate Command, z reguły typu:
+  
+  `[Stargate Command] miejmy nadzieję, że PRZYJACIEL pomoże nam przeciwko WROGOWI`
+
+2. sekwencję wykręcania adresu z kolejnymi numerami i podanym **chevronem**
   * przy 7 lub więcej chevronach, ostatni jest raportowany jako _locked_
-  * wszystkie inne jako _encoded_
-* komentarz SG-1 oparty na (1) liczbie **chevrons** i (2) wartości ostatniego z nich
+  * wszystkie inne jako _encoded_:
 
-## funkcja przyjmuje argumenty:
 
-* dowolną ilość liter odpowiadająch szewronom oraz opcjonalnie _earth_, który powinien być ostatnim chevronem
+```python
+chevron 1 encoded (q)
+chevron 2 encoded (h)
+chevron 3 encoded (o)
+chevron 4 encoded (e)
+chevron 5 encoded (t)
+chevron 6 encoded (f)
+chevron 7 locked (b)
+```
+
+3. komentarz SG-1 oparty na liczbie **chevrons** i wartości ostatniego z nich, np. przy czterech:
+
+`[SG-1] oh, for crying out loud!`
+
+## argumenty funkcji stargate()
+
+* dowolna ilość liter oraz _earth_, która **powinna** być ostatnim _chevronem_
 * określenia 
   * **wroga** (opcjonalnie), domyślny to _Goa'uld_
-  * **sprzymierzeńca** (obowiązkowo), brak sprzymierzeńca powoduje print wiadomości typu
-    * "brak sprzymierzeńców przeciwko WROGOWI, gra skończona
-    * i przerwanie wykonywania funkcji
+  * **sprzymierzeńca** (obowiązkowo)
+  
+Brak sprzymierzeńca powoduje print wiadomości:
+
+   `brak sprzymierzeńców przeciwko WROGOWI, gra skończona`
+    
+i przerwanie wykonywania funkcji
 
 ### przykład
 
@@ -37,14 +57,16 @@ chevron 7 locked (earth)
 ```
    
 
-## logika odpowiedzi SG-1 w zależności od podanych _chevrons_:
+## logika odpowiedzi SG-1
 
-* poniżej 7 - O'Neill wkurzony
-* 7 lub więcej, ale ostatni to nie Ziemia - Carter zaniepokojona
-* 7 i ostatni to Ziemia - Tea'lc zadowolony
-* więcej niż 7 i ostatni to Ziemia - Jackson zaciekawiony
+| liczba chevrons                         | reakcja               |
+|-----------------------------------------|-----------------------|
+| poniżej 7                               | O'Neill wkurzony      |
+| 7 lub więcej, ale ostatni to nie Ziemia | Carter zaniepokojona  |
+| 7 i ostatni to Ziemia                   | Tea'lc zadowolony     |
+| więcej niż 7 i ostatni to Ziemia        | Jackson zaintrygowany |
 
-## można zacząć od poniższych struktur:
+## definicje na start
 
 ```python
 SG1 = {
