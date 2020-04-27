@@ -14,7 +14,7 @@ def initialize_car():
     }
 
 
-def set_car_data(car, model, year, max_passengers=5, **kwargs):
+def set_car_data(car, model, year, max_passengers=3, **kwargs):
     car['model'] = model
     car['year'] = year
     car['max_passengers'] = max_passengers
@@ -43,7 +43,7 @@ def add_passengers(car, *passengers):
     available = car['max_passengers'] - len(car['passengers'])
     if car['speed'] != 0:
         print("Cannot add passengers while car is moving!")
-    elif len(car['passengers']) >= car['max_passengers']:
+    elif not available > 0:
         print("No free places for new passengers available!'")
     else:
         car['passengers'].extend(passengers[:available])
