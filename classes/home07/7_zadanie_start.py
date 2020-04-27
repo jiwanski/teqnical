@@ -37,14 +37,9 @@ def stop(car):
 def board_people(car, driver, *passengers):
     car['driver'] = driver
     add_passengers(car, *passengers)
-    # free_seats = len(passengers) - len(car['passengers'])
-    # print(free_seats)
-    # if free_seats > 0:
-    #     add_passengers(car, *passengers[:free_seats])
 
 
 def add_passengers(car, *passengers):
-    print(len(passengers))
     available = car['max_passengers'] - len(car['passengers'])
     if car['speed'] != 0:
         print("Cannot add passengers while car is moving!")
@@ -64,7 +59,6 @@ def describe_car(car) -> None:
         description += f'Currently the driver is {car["driver"]} and there are {len(car["passengers"])} passengers boarded.\n'
         description += f'Current speed of the car is {car["speed"]}.' if car['speed'] > 0 else 'The car is stopped now.'
         print(description)
-        # print(car['passengers'])
 
 
 if __name__ == '__main__':
