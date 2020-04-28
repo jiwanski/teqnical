@@ -1,9 +1,11 @@
-class Car:
+DEFAULT_PASSENGERS = []
 
+
+class Car:
     def __init__(self, driver=None, model=None, year=None, color=None, max_passengers=None, passengers=None, speed=0,
                  configured=False):
         if passengers is None:
-            passengers = []
+            passengers = DEFAULT_PASSENGERS
         self.passengers = passengers
         self.speed = speed
         self.driver = driver
@@ -14,7 +16,7 @@ class Car:
         self.max_passengers = max_passengers
         self.configured = configured
 
-    def set_car_data(self, model, year, max_passengers=6, **kwargs):
+    def set_car_data(self, model, year, max_passengers=4, **kwargs):
         self.model = model
         self.year = year
         self.max_passengers = max_passengers
@@ -37,13 +39,13 @@ class Car:
         self.add_passengers(*passengers)
 
     def add_passengers(self, *passengers):
-        available = self.max_passengers - len(self.passengers)
+        free_seats = self.max_passengers - len(self.passengers)
         if self.speed != 0:
             print("Cannot add passengers while car is moving!")
-        elif not available > 0:
+        elif free_seats <= 0:
             print("No free places for new passengers available!")
         else:
-            self.passengers.extend(passengers[:available])
+            self.passengers.extend(passengers[:free_seats])
 
     def describe_car(self):
         if not self.configured:
@@ -61,7 +63,6 @@ class Car:
 vehicle = Car()
 vehicle.drive(30)
 vehicle.set_car_data('Honda', 1998)
-# vehicle.set_car_data('Mazda', 2010, 7, color='green')
 vehicle.board_people('Kate', 'James', 'Nina', 'Mike', 'Bob')
 vehicle.drive(60)
 vehicle.describe_car()
