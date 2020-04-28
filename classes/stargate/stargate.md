@@ -6,8 +6,8 @@ Funkcja `stargate()` ma wydrukować następujące zachowania w Stargate Command 
   
   `[Stargate Command] miejmy nadzieję, że SPRZYMIERZENIEC pomoże nam przeciwko WROGOWI`
 
-2. sekwencję wykręcania adresu z kolejnymi numerami i podanym **chevronem**
-  * przy 7 lub więcej chevronach, ostatni jest raportowany jako _locked_
+2. sekwencję wykręcania adresu z kolejnymi numerami i podanym _chevronem_
+  * przy 7 lub więcej _chevronach_, ostatni jest raportowany jako _locked_
   * wszystkie inne jako _encoded_:
 
 

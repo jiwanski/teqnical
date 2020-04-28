@@ -1,6 +1,6 @@
 # task 1
 def points_distance(position_1: list, position_2: list) -> float:
-    xy_diff = [x - y for x, y in zip(position_1, position_2)]
+    xy_diff = [abs(x - y) for x, y in zip(position_1, position_2)]
     distance = (xy_diff[0] ** 2 + xy_diff[1] ** 2) ** 0.5
     return round(distance, 2)
 

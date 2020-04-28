@@ -14,7 +14,7 @@ def initialize_car():
     }
 
 
-def set_car_data(car, model, year, max_passengers=3, **kwargs):
+def set_car_data(car, model, year, max_passengers=5, **kwargs):
     car['model'] = model
     car['year'] = year
     car['max_passengers'] = max_passengers
